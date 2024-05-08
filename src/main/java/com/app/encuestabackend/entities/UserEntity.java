@@ -1,10 +1,7 @@
 package com.app.encuestabackend.entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import javax.annotation.processing.Generated;
@@ -12,16 +9,19 @@ import javax.annotation.processing.Generated;
 @Entity(name="users")
 @Data
 public class UserEntity {
-    
+
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(nullable= false, length = 255)
     private String name;
 
-    private String subname;
+    @Column(nullable= false, length = 255)
+    private String email;
 
-    private Boolean estado;
+    @Column(nullable= false, length = 255)
+    private String encryptedPassword;
 
 
 
