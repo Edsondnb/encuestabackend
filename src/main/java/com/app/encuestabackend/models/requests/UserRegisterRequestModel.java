@@ -7,6 +7,7 @@ public class UserRegisterRequestModel {
 
     private String name;
 
+    private String subname;
     private String email;
     private String password;
 }
